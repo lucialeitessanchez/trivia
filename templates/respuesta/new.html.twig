@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nueva Respuesta{% endblock %}
+
+{% block body %}
+    <h1>Crear nueva Respuesta</h1>
+
+    {{ include('respuesta/_form.html.twig') }}
+
+    <a href="{{ path('app_respuesta_index') }}">back to list</a>
+
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+    
+  <input type="submit" class="btn btn-light" value="Guardar"/>
+  {{ form_end(form) }}
+  <a type="button" class="btn btn-light" href="{{ path('app_respuesta_index') }}">Volver</a>
+  </div>
+{% endblock %}

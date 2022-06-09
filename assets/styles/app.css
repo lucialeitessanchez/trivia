@@ -1,0 +1,27 @@
+body{
+    color: #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+    text-emphasis-color: #f0f0f0;
+    text-decoration-color: #f0f0f0;
+    background-color: #7d5fa5;
+    margin: 20px;
+}
+
+a { /* este es el color del link*/
+    color: whitesmoke;
+}
+
+#banner{ /* la imagen del ministerio se amolda a todas las pantallas */
+
+    width: 60%;
+    max-width: 960px;
+    margin: auto;
+
+    width: 50%;
+    height: auto;
+
+}
+
+#navNombremunicipio{
+    color:#f0f0f0;
+}

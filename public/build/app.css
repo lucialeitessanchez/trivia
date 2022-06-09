@@ -1,0 +1,29 @@
+body{
+    color: #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+    text-emphasis-color: #f0f0f0;
+    text-decoration-color: #f0f0f0;
+    background-color: #7d5fa5;
+    margin: 20px;
+}
+
+a { /* este es el color del link*/
+    color: whitesmoke;
+}
+
+#banner{ /* la imagen del ministerio se amolda a todas las pantallas */
+
+    width: 60%;
+    max-width: 960px;
+    margin: auto;
+
+    width: 50%;
+    height: auto;
+
+}
+
+#navNombremunicipio{
+    color:#f0f0f0;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXBwLmNzcyIsIm1hcHBpbmdzIjoiQUFBQTtJQUNJLGNBQWM7SUFDZCxxQ0FBcUM7SUFDckMsNEJBQTRCO0lBQzVCLDhCQUE4QjtJQUM5Qix5QkFBeUI7SUFDekIsWUFBWTtBQUNoQjs7QUFFQSxJQUFJLDZCQUE2QjtJQUM3QixpQkFBaUI7QUFDckI7O0FBRUEsU0FBUyw2REFBNkQ7O0lBRWxFLFVBQVU7SUFDVixnQkFBZ0I7SUFDaEIsWUFBWTs7SUFFWixVQUFVO0lBQ1YsWUFBWTs7QUFFaEI7O0FBRUE7SUFDSSxhQUFhO0FBQ2pCLEMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hc3NldHMvc3R5bGVzL2FwcC5jc3MiXSwic291cmNlc0NvbnRlbnQiOlsiYm9keXtcbiAgICBjb2xvcjogI2YwZjBmMDtcbiAgICBmb250LWZhbWlseTogJ01vbnRzZXJyYXQnLCBzYW5zLXNlcmlmO1xuICAgIHRleHQtZW1waGFzaXMtY29sb3I6ICNmMGYwZjA7XG4gICAgdGV4dC1kZWNvcmF0aW9uLWNvbG9yOiAjZjBmMGYwO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICM3ZDVmYTU7XG4gICAgbWFyZ2luOiAyMHB4O1xufVxuXG5hIHsgLyogZXN0ZSBlcyBlbCBjb2xvciBkZWwgbGluayovXG4gICAgY29sb3I6IHdoaXRlc21va2U7XG59XG5cbiNiYW5uZXJ7IC8qIGxhIGltYWdlbiBkZWwgbWluaXN0ZXJpbyBzZSBhbW9sZGEgYSB0b2RhcyBsYXMgcGFudGFsbGFzICovXG5cbiAgICB3aWR0aDogNjAlO1xuICAgIG1heC13aWR0aDogOTYwcHg7XG4gICAgbWFyZ2luOiBhdXRvO1xuXG4gICAgd2lkdGg6IDUwJTtcbiAgICBoZWlnaHQ6IGF1dG87XG5cbn1cblxuI25hdk5vbWJyZW11bmljaXBpb3tcbiAgICBjb2xvcjojZjBmMGYwO1xufSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/

@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<br><br>
+
+<h1 align="center">¡ Le damos la bienvenida !</h1>
+<br>
+
+<form class="row row-cols-lg-auto g-3 align-items-center" action="{{ path('app_cuestionario')}}">
+  <div class="col-12" >
+    <label class="visually-hidden" for="inlineFormInputMunicipio">Municipio/Comuna</label>
+    <div class="input-group">
+      <div class="input-group-text">Municipio/comuna</div>
+      <input type="text" class="form-control" id="InputMunicipio" name="InputMunicipio">
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-secondary">Ingresar</button>
+  </div>
+</form>
+
+{% endblock %}   
+

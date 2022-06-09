@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pregunta{% endblock %}
+
+{% block body %}
+    <h1>Pregunta</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idpregunta</th>
+                <td>{{ preguntum.idpregunta }}</td>
+            </tr>
+            <tr>
+                <th>Parametromedicion</th>
+                <td>{{ preguntum.parametromedicion }}</td>
+            </tr>
+            <tr>
+                <th>Rojo</th>
+                <td>{{ preguntum.rojo }}</td>
+            </tr>
+            <tr>
+                <th>Amarillo</th>
+                <td>{{ preguntum.amarillo }}</td>
+            </tr>
+            <tr>
+                <th>Verde</th>
+                <td>{{ preguntum.verde }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ preguntum.fecha ? preguntum.fecha|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pregunta_index') }}">back to list</a>
+
+    <a href="{{ path('app_pregunta_edit', {'idpregunta': preguntum.idpregunta}) }}">edit</a>
+
+    {{ include('pregunta/_delete_form.html.twig') }}
+{% endblock %}

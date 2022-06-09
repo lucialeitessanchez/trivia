@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nueva Pregunta{% endblock %}
+
+{% block body %}
+    <h2>Crear nueva Pregunta</h2>
+
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+
+<br>
+
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+    
+  <input type="submit" class="btn btn-light" value="Guardar"/>
+  {{ form_end(form) }}
+  <a type="button" class="btn btn-light" href="{{ path('app_pregunta_index') }}">Volver</a>
+  </div>
+
+
+
+  
+{% endblock %}

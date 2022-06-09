@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Respuesta index{% endblock %}
+
+{% block body %}
+    <h1>Listado de respuestas</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id respuesta</th>
+                <th>Parametro medicion</th>
+                <th>Color</th>
+                <th>Fecha</th>
+                <th>Municipio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for respuestum in respuestas %}
+            <tr>
+                <td>{{ respuestum.idrespuesta }}</td>
+                <td>{{ respuestum.parametromedicion }}</td>
+                <td>{{ respuestum.color }}</td>
+                <td>{{ respuestum.fecha ? respuestum.fecha|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ respuestum.municipio }}</td>
+                <td>
+                    <a href="{{ path('app_respuesta_show', {'idrespuesta': respuestum.idrespuesta}) }}">ver</a>
+                    <a href="{{ path('app_respuesta_edit', {'idrespuesta': respuestum.idrespuesta}) }}">editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">No hay respuestas</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_respuesta_new') }}" class="btn btn-light">Crear nueva</a>
+{% endblock %}

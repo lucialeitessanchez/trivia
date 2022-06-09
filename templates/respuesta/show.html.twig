@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Respuesta{% endblock %}
+
+{% block body %}
+    <h1>Respuesta</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Idrespuesta</th>
+                <td>{{ respuestum.idrespuesta }}</td>
+            </tr>
+            <tr>
+                <th>Parametromedicion</th>
+                <td>{{ respuestum.parametromedicion }}</td>
+            </tr>
+            <tr>
+                <th>Color</th>
+                <td>{{ respuestum.color }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{{ respuestum.fecha ? respuestum.fecha|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Municipio</th>
+                <td>{{ respuestum.municipio }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_respuesta_index') }}">back to list</a>
+
+    <a href="{{ path('app_respuesta_edit', {'idrespuesta': respuestum.idrespuesta}) }}">edit</a>
+
+    {{ include('respuesta/_delete_form.html.twig') }}
+{% endblock %}
