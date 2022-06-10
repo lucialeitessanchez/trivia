@@ -22,8 +22,6 @@ class RespuestaType extends AbstractType
                 'html5' => true
             ])
             ->add('municipio')
-            ->add('idpregunta')
-            ->add('idformulario')
         ;
     }
 

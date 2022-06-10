@@ -12,6 +12,7 @@ return [
     'app_pregunta_edit' => [['idpregunta'], ['_controller' => 'App\\Controller\\PreguntaController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'idpregunta', true], ['text', '/pregunta']], [], [], []],
     'app_pregunta_delete' => [['idpregunta'], ['_controller' => 'App\\Controller\\PreguntaController::delete'], [], [['text', '/delete'], ['variable', '/', '[^/]++', 'idpregunta', true], ['text', '/pregunta']], [], [], []],
     'app_respuesta_index' => [[], ['_controller' => 'App\\Controller\\RespuestaController::index'], [], [['text', '/respuesta/']], [], [], []],
+    'app_respuesta_nuevo' => [[], ['_controller' => 'App\\Controller\\RespuestaController::nuevo'], [], [['text', '/respuesta/nuevo']], [], [], []],
     'app_respuesta_new' => [[], ['_controller' => 'App\\Controller\\RespuestaController::new'], [], [['text', '/respuesta/new']], [], [], []],
     'app_respuesta_show' => [['idrespuesta'], ['_controller' => 'App\\Controller\\RespuestaController::show'], [], [['variable', '/', '[^/]++', 'idrespuesta', true], ['text', '/respuesta']], [], [], []],
     'app_respuesta_edit' => [['idrespuesta'], ['_controller' => 'App\\Controller\\RespuestaController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'idrespuesta', true], ['text', '/respuesta']], [], [], []],

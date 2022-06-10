@@ -25,6 +25,40 @@ class RespuestaController extends AbstractController
         ]);
     }
 
+    #[Route('/nuevo', name: 'app_respuesta_nuevo', methods: ['POST'])]
+    public function nuevo(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $respuestaN=new Respuesta();
+        //$form = $this->createForm(RespuestaType::class, $respuestum);
+        //$form->handleRequest($request);
+        $medicion= $request->request->get('medicion');
+        $respuesta=$request->request->get('respuesta');
+        $municipio=$request->reques->get('municipio');
+
+        
+        $respuestaN->setParametromedicion($medicion);
+        $respuestaN->setMunicipio($municipio);
+        $respuestaN->setColor('rojo'); //aca en realidad tengo que buscar y comprar en la base de datos
+
+        $fecha=new \DateTime();
+        $respuestaN->setFecha($fecha);
+    
+        $entityManager->persist($respuestaN);
+        $entityManager->flush();
+
+        
+
+        //if ($form->isSubmitted() && $form->isValid()) {
+        /*    $respuestum = new Respuesta();
+            $respuestas->setMunicipio($data[0]['municipio']);
+            $entityManager->persist($respuestum);
+            $entityManager->flush();*/
+            //return $this->json(['status'=>'FAIL']);    
+        //}
+
+        return $this->json(['status'=>'ok']);
+    }
+
     #[Route('/new', name: 'app_respuesta_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -33,6 +67,19 @@ class RespuestaController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $medicion= $request->request->get('medicion');
+            $respuesta=$request->request->get('respuesta');
+            $municipio=$request->reques->get('municipio');
+    
+            
+            $respuestum->setParametromedicion($medicion);
+            $respuestum->setMunicipio($municipio);
+            $respuestum->setColor('rojo'); //aca en realidad tengo que buscar y comprar en la base de datos
+    
+            $fecha=new \DateTime();
+            $respuestum->setFecha($fecha);
+
+
             $entityManager->persist($respuestum);
             $entityManager->flush();
 

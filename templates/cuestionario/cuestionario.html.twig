@@ -6,14 +6,14 @@
 
 <ul class="nav justify-content-end">
   <li class="nav-item">
-    <a class="nav-link disabled" id=navNombremunicipio>{{ municipio }}</a>
+    <a class="nav-link disabled" id="navNombremunicipio">{{ municipio }}</a>
   </li>
 </ul>
 
 
     <div class="pregunta"></div>
 
-     <button onclick="printHTMLQuestion(i)" class="btn btn-outline-light">Siguiente</button>
+     <button id="btnsiguiente" onclick="printHTMLQuestion(i)" class="btn btn-outline-light">Siguiente</button>
 
 
 <input type="text" name="urlList" id="urlList" value="{{ path('app_cuestionario_list') }}" style="visibility:hidden">
@@ -24,9 +24,12 @@
     let cuestionario = [];
     let i=0; //variable para que vaya recorriendo de a una las preguntas
 
+//enviar respuesta a php
 let url = document.getElementById('urlList').value;
 let currentQuestionIndex = 0;
-
+ var respuestaSeleccionada;  
+       
+        
 
 
  async function fetchh() {
@@ -41,34 +44,75 @@ let currentQuestionIndex = 0;
 
 
 
-const evaluateAnswer=(variable) =>{
-  console.log(variable); //aca guardo lo que selecciona de respuesta 
+const evaluateAnswer=(variable,pregunta) =>{
+
+  var municipio = document.getElementById('navNombremunicipio').innerHTML; //tomo el texto del municipio
+  respuestaSeleccionada=variable;
+
+  var datos={};
+  datos.pregunta=pregunta;
+  datos.respuesta=variable;
+  datos.municipio=municipio;
+
+  
 }
  function  printHTMLQuestion() {
    
-            let clave = cuestionario[i]; 
-           
-            let elemento = {
-              'medicion':clave.medicion
-              ,'rojo':clave.rojo
-              ,'amarillo':clave.amarillo
-              ,'verde':clave.verde
-            };
-           
-            resp = [elemento.rojo, elemento.amarillo , elemento.verde]; //armo el arreglo con las respuesta para ponerla en los radio button
-            
-            const htmlRespuestasArray = resp.map( currentA => `<p><input type="radio" name="respondida" onClick="evaluateAnswer('${currentA}')"></button> <span>${currentA}</span></p>`); //al tocar el boton guarda la opcion que eligio
-            const htmlRespuestas = htmlRespuestasArray.join(' '); //transformo el array donde hay espacios
+  if (i >= cuestionario.length) { //aca llamar a la plantilla de finalizacion
+    alert('fin del arreglo');
+    return;
+  }
 
-            
-     
-            let htmlQuestionCode = `<p>${elemento.medicion}</p><div>${htmlRespuestas}</div>`; //coloco la pregunta y la respuestas en el div definido arriba
-            document.querySelector('.pregunta').innerHTML = htmlQuestionCode; //esto es para que me muestre la pregunta y lo relacion con el div
+  let clave = cuestionario[i]; 
+  
+  let elemento = {
+    'medicion':clave.medicion
+    ,'rojo':clave.rojo
+    ,'amarillo':clave.amarillo
+    ,'verde':clave.verde
+  };
+ 
 
-    if(i== cuestionario.lenght)
-        {
-          console.log("termino");
-        }
+  resp = [elemento.rojo, elemento.amarillo , elemento.verde]; //armo el arreglo con las respuesta para ponerla en los radio button  
+  //al tocar el boton guarda la opcion que eligio, envio la respuesta y la pregunta
+  const htmlRespuestasArray = resp.map( currentA => `<p><input type="radio" name="respondida" onClick="evaluateAnswer('${currentA}','${elemento.medicion}')"></button> <span>${currentA}</span></p>`); 
+
+  const htmlRespuestas = htmlRespuestasArray.join(' '); //transformo el array donde hay espacios
+
+  let htmlQuestionCode = `<p>${elemento.medicion}</p><div>${htmlRespuestas}</div>`; //coloco la pregunta y la respuestas en el div definido arriba
+  document.querySelector('.pregunta').innerHTML = htmlQuestionCode; //esto es para que me muestre la pregunta y lo relacion con el div
+
+var municipio = document.getElementById('navNombremunicipio').innerHTML;
+
+var url = 'respuesta/new';
+var data = {};
+
+
+data.medicion=elemento.medicion;
+data.respuesta=respuestaSeleccionada;
+data.municipio=municipio;
+
+$.ajax({
+type: "POST",
+url: "/respuesta/nuevo",
+data: data
+}).done(function( msg ) {
+alert( "Data Saved: " + msg );
+});
+
+
+/*
+fetch(url, {
+  method: 'POST',
+  body: JSON.stringify(data), // data can be `string` or {object}!
+  headers:{
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => response.json())
+.catch(error => console.error('Error:', error))
+.then(response => console.log('Success:', response));
+*/
 
   i++;
  }

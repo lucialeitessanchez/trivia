@@ -6600,7 +6600,7 @@
         <argument key="respuestum" type="service_closure" id=".errored..service_locator.rAR87Dk.App\Entity\Respuesta"/>
       </argument>
     </service>
-    <service id=".service_locator.k.OM68K" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.LwQI3Qt" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\IndexController::cuestionario" type="service_closure" id=".service_locator.l2QwsaZ"/>
@@ -6615,6 +6615,7 @@
         <argument key="App\Controller\RespuestaController::edit" type="service_closure" id=".service_locator.rAR87Dk"/>
         <argument key="App\Controller\RespuestaController::index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\RespuestaController::new" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\RespuestaController::nuevo" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\RespuestaController::show" type="service_closure" id=".service_locator.JpCNm0Q"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
@@ -6634,6 +6635,7 @@
         <argument key="App\Controller\RespuestaController:edit" type="service_closure" id=".service_locator.rAR87Dk"/>
         <argument key="App\Controller\RespuestaController:index" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\RespuestaController:new" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\RespuestaController:nuevo" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\RespuestaController:show" type="service_closure" id=".service_locator.JpCNm0Q"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.KfbR3DY"/>
@@ -7244,12 +7246,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.k.OM68K"/>
+      <argument type="service" id=".service_locator.LwQI3Qt"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.k.OM68K"/>
+      <argument type="service" id=".service_locator.LwQI3Qt"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -8221,7 +8223,7 @@
     <service id="sensio_framework_extra.security.expression_language" alias="sensio_framework_extra.security.expression_language.default"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.k.OM68K"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.LwQI3Qt"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -8248,7 +8250,7 @@
     <service id=".service_locator.0GV1BZZ" alias=".service_locator.gSv9zYw"/>
     <service id=".service_locator.Twm23Gl" alias=".service_locator.OZGTtK2"/>
     <service id=".service_locator.B.Lvwp2" alias=".service_locator.rAR87Dk"/>
-    <service id=".service_locator.l6OFCLo" alias=".service_locator.k.OM68K"/>
+    <service id=".service_locator.PL7MU7E" alias=".service_locator.LwQI3Qt"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.Y8ZNYzB" alias=".service_locator.4e5wOjj"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>

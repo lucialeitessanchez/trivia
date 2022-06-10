@@ -14,6 +14,7 @@ return [
         '/pregunta' => [[['_route' => 'app_pregunta_index', '_controller' => 'App\\Controller\\PreguntaController::index'], null, ['GET' => 0], null, true, false, null]],
         '/pregunta/new' => [[['_route' => 'app_pregunta_new', '_controller' => 'App\\Controller\\PreguntaController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/respuesta' => [[['_route' => 'app_respuesta_index', '_controller' => 'App\\Controller\\RespuestaController::index'], null, ['GET' => 0], null, true, false, null]],
+        '/respuesta/nuevo' => [[['_route' => 'app_respuesta_nuevo', '_controller' => 'App\\Controller\\RespuestaController::nuevo'], null, ['POST' => 0], null, false, false, null]],
         '/respuesta/new' => [[['_route' => 'app_respuesta_new', '_controller' => 'App\\Controller\\RespuestaController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/_profiler' => [[['_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'], null, null, null, true, false, null]],
         '/_profiler/search' => [[['_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'], null, null, null, false, false, null]],
