@@ -127,6 +127,7 @@ const evaluateAnswer=(variable,pregunta) =>{
  function  printHTMLQuestion() {
    
   if (i >= cuestionario.length) { //aca llamar a la plantilla de finalizacion
+   
     alert('fin del arreglo');
     return;
   }
@@ -160,13 +161,13 @@ data.medicion=elemento.medicion;
 data.respuesta=respuestaSeleccionada;
 data.municipio=municipio;
 
-\$.ajax({
+/*\$.ajax({
 type: \"POST\",
 url: \"/respuesta/nuevo\",
 data: data
 }).done(function( msg ) {
 alert( \"Data Saved: \" + msg );
-});
+});*/
 
 
 /*
@@ -278,6 +279,7 @@ const evaluateAnswer=(variable,pregunta) =>{
  function  printHTMLQuestion() {
    
   if (i >= cuestionario.length) { //aca llamar a la plantilla de finalizacion
+   
     alert('fin del arreglo');
     return;
   }
@@ -311,13 +313,13 @@ data.medicion=elemento.medicion;
 data.respuesta=respuestaSeleccionada;
 data.municipio=municipio;
 
-\$.ajax({
+/*\$.ajax({
 type: \"POST\",
 url: \"/respuesta/nuevo\",
 data: data
 }).done(function( msg ) {
 alert( \"Data Saved: \" + msg );
-});
+});*/
 
 
 /*
