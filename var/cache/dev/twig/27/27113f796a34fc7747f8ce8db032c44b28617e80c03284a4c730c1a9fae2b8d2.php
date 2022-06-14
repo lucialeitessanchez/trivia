@@ -69,22 +69,24 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
 <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
 <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
 <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,100;1,400&display=swap\" rel=\"stylesheet\">
+
+
         ";
-        // line 16
+        // line 18
         echo "        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 19
+        // line 21
         echo "
         ";
-        // line 20
+        // line 22
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 23
+        // line 25
         echo "    </head>
     <body>
         ";
-        // line 25
+        // line 27
         $this->displayBlock('body', $context, $blocks);
-        // line 26
+        // line 28
         echo "    </body>
 </html>
 ";
@@ -115,7 +117,7 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
 
     }
 
-    // line 16
+    // line 18
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -125,7 +127,7 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 17
+        // line 19
         echo "            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         echo "
@@ -138,7 +140,7 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
 
     }
 
-    // line 20
+    // line 22
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -148,7 +150,7 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 21
+        // line 23
         echo "            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -161,7 +163,7 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
 
     }
 
-    // line 25
+    // line 27
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -191,7 +193,7 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
 
     public function getDebugInfo()
     {
-        return array (  165 => 25,  152 => 21,  142 => 20,  129 => 17,  119 => 16,  100 => 5,  88 => 26,  86 => 25,  82 => 23,  80 => 20,  77 => 19,  74 => 16,  68 => 11,  61 => 7,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  167 => 27,  154 => 23,  144 => 22,  131 => 19,  121 => 18,  102 => 5,  90 => 28,  88 => 27,  84 => 25,  82 => 22,  79 => 21,  76 => 18,  68 => 11,  61 => 7,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -210,6 +212,8 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
 <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
 <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
 <link href=\"https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,100;1,400&display=swap\" rel=\"stylesheet\">
+
+
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}

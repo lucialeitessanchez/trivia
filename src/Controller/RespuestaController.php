@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 #[Route('/respuesta')]
 class RespuestaController extends AbstractController
 {
@@ -28,17 +29,23 @@ class RespuestaController extends AbstractController
     #[Route('/nuevo', name: 'app_respuesta_nuevo', methods: ['POST'])]
     public function nuevo(Request $request, EntityManagerInterface $entityManager): Response
     {
+        /*$entityManager = $this->getDoctrine()->getManager();
+        $data = json_decode($request->getContent(),true);
+        $medicion = $data['medicion'];
+        $respuesta = $data['respuesta'];
+        $municipio = $data['municipio'];
+
         $respuestaN=new Respuesta();
         //$form = $this->createForm(RespuestaType::class, $respuestum);
         //$form->handleRequest($request);
-        $medicion= $request->request->get('medicion');
-        $respuesta=$request->request->get('respuesta');
-        $municipio=$request->reques->get('municipio');
+//        $medicion= $request->request->get('medicion');
+  //      $respuesta=$request->request->get('respuesta');
+    //    $municipio=$request->reques->get('municipio');
 
         
         $respuestaN->setParametromedicion($medicion);
         $respuestaN->setMunicipio($municipio);
-        $respuestaN->setColor('rojo'); //aca en realidad tengo que buscar y comprar en la base de datos
+        $respuestaN->setColor($respuesta); //aca en realidad tengo que buscar y comprar en la base de datos
 
         $fecha=new \DateTime();
         $respuestaN->setFecha($fecha);
@@ -46,17 +53,9 @@ class RespuestaController extends AbstractController
         $entityManager->persist($respuestaN);
         $entityManager->flush();
 
-        
-
-        //if ($form->isSubmitted() && $form->isValid()) {
-        /*    $respuestum = new Respuesta();
-            $respuestas->setMunicipio($data[0]['municipio']);
-            $entityManager->persist($respuestum);
-            $entityManager->flush();*/
-            //return $this->json(['status'=>'FAIL']);    
-        //}
-
-        return $this->json(['status'=>'ok']);
+*/
+$data = json_decode($request->getContent(),true);
+        return $this->json(['status'=>'ok','data'=>$data]);
     }
 
     #[Route('/new', name: 'app_respuesta_new', methods: ['GET', 'POST'])]
@@ -74,7 +73,7 @@ class RespuestaController extends AbstractController
             
             $respuestum->setParametromedicion($medicion);
             $respuestum->setMunicipio($municipio);
-            $respuestum->setColor('rojo'); //aca en realidad tengo que buscar y comprar en la base de datos
+            $respuestum->setColor($respuesta); //aca en realidad tengo que buscar y comprar en la base de datos
     
             $fecha=new \DateTime();
             $respuestum->setFecha($fecha);
