@@ -33,29 +33,29 @@ class RespuestaController extends AbstractController
         $data = json_decode($request->getContent(),true);
         $medicion = $data['medicion'];
         $respuesta = $data['respuesta'];
-        $municipio = $data['municipio'];
+        $municipio = $data['municipio'];*/
 
         $respuestaN=new Respuesta();
         //$form = $this->createForm(RespuestaType::class, $respuestum);
         //$form->handleRequest($request);
-//        $medicion= $request->request->get('medicion');
+        $medicion= $request->request->get('medicion');
   //      $respuesta=$request->request->get('respuesta');
     //    $municipio=$request->reques->get('municipio');
 
         
-        $respuestaN->setParametromedicion($medicion);
-        $respuestaN->setMunicipio($municipio);
-        $respuestaN->setColor($respuesta); //aca en realidad tengo que buscar y comprar en la base de datos
+    //    $respuestaN->setParametromedicion($medicion);
+      //  $respuestaN->setMunicipio($municipio);
+       // $respuestaN->setColor($respuesta); //aca en realidad tengo que buscar y comprar en la base de datos
 
-        $fecha=new \DateTime();
-        $respuestaN->setFecha($fecha);
+        //$fecha=new \DateTime();
+       // $respuestaN->setFecha($fecha);
     
-        $entityManager->persist($respuestaN);
-        $entityManager->flush();
+        //$entityManager->persist($respuestaN);
+       // $entityManager->flush();
 
-*/
+
 $data = json_decode($request->getContent(),true);
-        return $this->json(['status'=>'ok','data'=>$data]);
+        return $this->json(['status'=>'ok','medicion'=>$medicion]);
     }
 
     #[Route('/new', name: 'app_respuesta_new', methods: ['GET', 'POST'])]
