@@ -29,33 +29,31 @@ class RespuestaController extends AbstractController
     #[Route('/nuevo', name: 'app_respuesta_nuevo', methods: ['POST'])]
     public function nuevo(Request $request, EntityManagerInterface $entityManager): Response
     {
-        /*$entityManager = $this->getDoctrine()->getManager();
-        $data = json_decode($request->getContent(),true);
-        $medicion = $data['medicion'];
-        $respuesta = $data['respuesta'];
-        $municipio = $data['municipio'];*/
+       
+        $respuestaN=new Respuesta(); //creo una nueva clase de respuesta, para insertar lo que obtengo cuando aprieta siguiente
 
-        $respuestaN=new Respuesta();
-        //$form = $this->createForm(RespuestaType::class, $respuestum);
-        //$form->handleRequest($request);
-        $medicion= $request->request->get('medicion');
-  //      $respuesta=$request->request->get('respuesta');
-    //    $municipio=$request->reques->get('municipio');
+        $datos= $request->getContent();//objeto de tipo json con el contenido de la pregunta,respuesta seleccionada y municipio
 
+            //decodifico el objeto json por partes para insertarlo 
+            $objeto= json_decode($datos);
+            //tengo todas las partes del objeto en variables
+            $medicion=$objeto->medicion; //le digo al objeto que me de lo que tiene como atributo en medicion
+            $respuesSeleccionada=$objeto->respuesta; // ¡¡¡¡¡¡¡¡tengo que comparar con la pregunta para saber el color!!!
+            $municipio=$objeto->municipio;
+            $fecha=date('d-m-Y');
+            //$respuestum->setFecha($fecha);
+
+                //base de datos
+            $em = $this->getDoctrine()->getManager();
+
+            $query = $em->createQuery('SELECT p FROM Pregunta p WHERE p.parametroMedicion = :medicion');
+            $query->setParameters(array(
+                'medicion' => $medicion,
+            ));
+            $pregunta = $query->getResult(); // array of ForumUser objects
+           
         
-    //    $respuestaN->setParametromedicion($medicion);
-      //  $respuestaN->setMunicipio($municipio);
-       // $respuestaN->setColor($respuesta); //aca en realidad tengo que buscar y comprar en la base de datos
-
-        //$fecha=new \DateTime();
-       // $respuestaN->setFecha($fecha);
-    
-        //$entityManager->persist($respuestaN);
-       // $entityManager->flush();
-
-
-$data = json_decode($request->getContent(),true);
-        return $this->json(['status'=>'ok','medicion'=>$medicion]);
+        return $this->json(['status'=>'ok','pregunta'=>$medicion,'municipio'=>$municipio,'respuesta'=>$respuesSeleccionada,'fecha'=>$fecha,'ob'=>$pregunta]);
     }
 
     #[Route('/new', name: 'app_respuesta_new', methods: ['GET', 'POST'])]
@@ -66,17 +64,9 @@ $data = json_decode($request->getContent(),true);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $medicion= $request->request->get('medicion');
-            $respuesta=$request->request->get('respuesta');
-            $municipio=$request->reques->get('municipio');
+           
     
-            
-            $respuestum->setParametromedicion($medicion);
-            $respuestum->setMunicipio($municipio);
-            $respuestum->setColor($respuesta); //aca en realidad tengo que buscar y comprar en la base de datos
-    
-            $fecha=new \DateTime();
-            $respuestum->setFecha($fecha);
+          
 
 
             $entityManager->persist($respuestum);

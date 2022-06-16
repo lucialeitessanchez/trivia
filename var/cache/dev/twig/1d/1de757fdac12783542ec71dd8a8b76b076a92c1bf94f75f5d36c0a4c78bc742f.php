@@ -162,9 +162,7 @@ data.respuesta=respuestaSeleccionada;
 data.municipio=municipio;*/
 
 if(data.respuesta){ //si se selecciono respuesta
-console.log(data);
 
-  
 fetch(url, {
   method: 'POST',
   body: JSON.stringify(data), // data can be `string` or {object}!
@@ -321,9 +319,7 @@ data.respuesta=respuestaSeleccionada;
 data.municipio=municipio;*/
 
 if(data.respuesta){ //si se selecciono respuesta
-console.log(data);
 
-  
 fetch(url, {
   method: 'POST',
   body: JSON.stringify(data), // data can be `string` or {object}!
