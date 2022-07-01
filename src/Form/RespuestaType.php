@@ -16,11 +16,7 @@ class RespuestaType extends AbstractType
         $builder
             ->add('parametromedicion')
             ->add('color')
-            ->add('fecha', DateType::class, [
-                'label' => 'Fecha',
-                'widget' => 'single_text',
-                'html5' => true
-            ])
+            ->add('fecha')
             ->add('municipio')
         ;
     }

@@ -88,37 +88,6 @@ var municipio = document.getElementById('navNombremunicipio').innerHTML;
 var url = 'respuesta/nuevo';
 var data = {"medicion": elemento.medicion, "respuesta": respuestaSeleccionada,"municipio": municipio};
 
-/*
-data.medicion=elemento.medicion;
-data.respuesta=respuestaSeleccionada;
-data.municipio=municipio;*/
-
-if(data.respuesta){ //si se selecciono respuesta
-
-fetch(url, {
-  method: 'POST',
-  body: JSON.stringify(data), // data can be `string` or {object}!
-  headers:{
-    'Content-Type': 'application/json'
-  }
-})
-.then(response => response.json())
-.catch(error => console.error('Error:', error))
-.then(response => console.log('Success:', response));
-
-}
-
-
-/*$.ajax({
-type: "POST",
-url: "/respuesta/nuevo",
-data: data
-}).done(function( msg ) {
-alert( "Data Saved: " + msg );
-});*/
-
-
-
 
   i++;
  }
