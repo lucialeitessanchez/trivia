@@ -75,7 +75,7 @@ class __TwigTemplate_9d2bf3fe861fb25f7ca7d56c2691576f72643c8165f587d8886c7cddca7
   </li>
 </ul>
 
-
+   <h1> <div class=\"fin\" align=\"center\" id=\"#textofin\"></div> </h1>
     <div class=\"pregunta\"></div>
 
      <button id=\"btnsiguiente\" onclick=\"printHTMLQuestion(i)\" class=\"btn btn-outline-light\">Siguiente</button>
@@ -128,7 +128,11 @@ const evaluateAnswer=(variable,pregunta) =>{
    
   if (i >= cuestionario.length) { //aca llamar a la plantilla de finalizacion
    
-    alert('fin del arreglo');
+     document.querySelector('.pregunta').innerHTML = \"\"; // borro las preguntas y respuestas 
+    document.getElementById('btnsiguiente').style.display= 'none' ; //saco el boton siguiente
+    document.getElementById('navNombremunicipio').style.display= 'none' ; //saco el nombre del municipio
+    
+    document.querySelector('.fin').innerHTML = \"¡ Gracias por contestar !\";
     return;
   }
 
@@ -175,16 +179,6 @@ fetch(url, {
 .then(response => console.log('Success:', response));
 
 }
-
-
-/*\$.ajax({
-type: \"POST\",
-url: \"/respuesta/nuevo\",
-data: data
-}).done(function( msg ) {
-alert( \"Data Saved: \" + msg );
-});*/
-
 
 
 
@@ -235,7 +229,7 @@ fetchh();
   </li>
 </ul>
 
-
+   <h1> <div class=\"fin\" align=\"center\" id=\"#textofin\"></div> </h1>
     <div class=\"pregunta\"></div>
 
      <button id=\"btnsiguiente\" onclick=\"printHTMLQuestion(i)\" class=\"btn btn-outline-light\">Siguiente</button>
@@ -285,7 +279,11 @@ const evaluateAnswer=(variable,pregunta) =>{
    
   if (i >= cuestionario.length) { //aca llamar a la plantilla de finalizacion
    
-    alert('fin del arreglo');
+     document.querySelector('.pregunta').innerHTML = \"\"; // borro las preguntas y respuestas 
+    document.getElementById('btnsiguiente').style.display= 'none' ; //saco el boton siguiente
+    document.getElementById('navNombremunicipio').style.display= 'none' ; //saco el nombre del municipio
+    
+    document.querySelector('.fin').innerHTML = \"¡ Gracias por contestar !\";
     return;
   }
 
@@ -332,16 +330,6 @@ fetch(url, {
 .then(response => console.log('Success:', response));
 
 }
-
-
-/*\$.ajax({
-type: \"POST\",
-url: \"/respuesta/nuevo\",
-data: data
-}).done(function( msg ) {
-alert( \"Data Saved: \" + msg );
-});*/
-
 
 
 

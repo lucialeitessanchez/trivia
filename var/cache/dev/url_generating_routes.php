@@ -6,6 +6,7 @@ return [
     'app_index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/']], [], [], []],
     'app_cuestionario' => [[], ['_controller' => 'App\\Controller\\IndexController::cuestionario'], [], [['text', '/cuestionario']], [], [], []],
     'app_cuestionario_list' => [[], ['_controller' => 'App\\Controller\\IndexController::cuestionarioList'], [], [['text', '/cuestionario/list']], [], [], []],
+    'app_semaforo' => [[], ['_controller' => 'App\\Controller\\IndexController::semaforo'], [], [['text', '/semaforo']], [], [], []],
     'app_pregunta_index' => [[], ['_controller' => 'App\\Controller\\PreguntaController::index'], [], [['text', '/pregunta/']], [], [], []],
     'app_pregunta_new' => [[], ['_controller' => 'App\\Controller\\PreguntaController::new'], [], [['text', '/pregunta/new']], [], [], []],
     'app_pregunta_show' => [['idpregunta'], ['_controller' => 'App\\Controller\\PreguntaController::show'], [], [['text', '/show'], ['variable', '/', '[^/]++', 'idpregunta', true], ['text', '/pregunta']], [], [], []],

@@ -55,4 +55,10 @@ class IndexController extends AbstractController
         return new JsonResponse($respuesta);
     }
 
+    #[Route('/semaforo', name: 'app_semaforo', methods: ['GET'])]
+    public function semaforo(EntityManagerInterface $entityManager): Response
+    {
+        return $this->render('cuestionario/semaforo.html.twig', [
+        ]);
+    }
 }

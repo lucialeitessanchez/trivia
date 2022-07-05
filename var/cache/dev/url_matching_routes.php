@@ -11,6 +11,7 @@ return [
         '/' => [[['_route' => 'app_index', '_controller' => 'App\\Controller\\IndexController::index'], null, ['GET' => 0], null, false, false, null]],
         '/cuestionario' => [[['_route' => 'app_cuestionario', '_controller' => 'App\\Controller\\IndexController::cuestionario'], null, ['GET' => 0], null, false, false, null]],
         '/cuestionario/list' => [[['_route' => 'app_cuestionario_list', '_controller' => 'App\\Controller\\IndexController::cuestionarioList'], null, ['GET' => 0], null, false, false, null]],
+        '/semaforo' => [[['_route' => 'app_semaforo', '_controller' => 'App\\Controller\\IndexController::semaforo'], null, ['GET' => 0], null, false, false, null]],
         '/pregunta' => [[['_route' => 'app_pregunta_index', '_controller' => 'App\\Controller\\PreguntaController::index'], null, ['GET' => 0], null, true, false, null]],
         '/pregunta/new' => [[['_route' => 'app_pregunta_new', '_controller' => 'App\\Controller\\PreguntaController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/respuesta' => [[['_route' => 'app_respuesta_index', '_controller' => 'App\\Controller\\RespuestaController::index'], null, ['GET' => 0], null, true, false, null]],

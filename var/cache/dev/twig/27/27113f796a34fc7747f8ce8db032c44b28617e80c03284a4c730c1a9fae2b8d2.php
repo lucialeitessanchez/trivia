@@ -74,19 +74,29 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
         ";
         // line 18
         echo "        ";
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
+        echo "
+
+        ";
+        // line 20
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 21
+        // line 22
         echo "
         ";
-        // line 22
-        $this->displayBlock('javascripts', $context, $blocks);
+        // line 23
+        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
+        echo "
+
+        ";
         // line 25
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 27
         echo "    </head>
     <body>
         ";
-        // line 27
+        // line 29
         $this->displayBlock('body', $context, $blocks);
-        // line 28
+        // line 30
         echo "    </body>
 </html>
 ";
@@ -117,7 +127,7 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
 
     }
 
-    // line 18
+    // line 20
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -127,11 +137,8 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 19
-        echo "            ";
-        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
-        echo "
-        ";
+        // line 21
+        echo "        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -140,7 +147,7 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
 
     }
 
-    // line 22
+    // line 25
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -150,10 +157,7 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 23
-        echo "            ";
-        echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
-        echo "
+        echo "    
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -163,7 +167,7 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
 
     }
 
-    // line 27
+    // line 29
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -193,7 +197,7 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
 
     public function getDebugInfo()
     {
-        return array (  167 => 27,  154 => 23,  144 => 22,  131 => 19,  121 => 18,  102 => 5,  90 => 28,  88 => 27,  84 => 25,  82 => 22,  79 => 21,  76 => 18,  68 => 11,  61 => 7,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  171 => 29,  151 => 25,  141 => 21,  131 => 20,  112 => 5,  100 => 30,  98 => 29,  94 => 27,  92 => 25,  87 => 23,  84 => 22,  82 => 20,  76 => 18,  68 => 11,  61 => 7,  57 => 6,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -215,12 +219,14 @@ class __TwigTemplate_60d60682181caaec1fff0d92644487e7f3738db0127ff1d988389d19b80
 
 
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {{ encore_entry_link_tags('app') }}
+
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
+        {{ encore_entry_script_tags('app') }}
+
+        {% block javascripts %}    
         {% endblock %}
     </head>
     <body>

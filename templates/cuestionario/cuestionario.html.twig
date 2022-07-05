@@ -10,7 +10,7 @@
   </li>
 </ul>
 
-
+   <h1> <div class="fin" align="center"></div> </h1> 
     <div class="pregunta"></div>
 
      <button id="btnsiguiente" onclick="printHTMLQuestion(i)" class="btn btn-outline-light">Siguiente</button>
@@ -60,7 +60,11 @@ const evaluateAnswer=(variable,pregunta) =>{
    
   if (i >= cuestionario.length) { //aca llamar a la plantilla de finalizacion
    
-    alert('fin del arreglo');
+     document.querySelector('.pregunta').innerHTML = ""; // borro las preguntas y respuestas 
+    document.getElementById('btnsiguiente').style.display= 'none' ; //saco el boton siguiente
+    document.getElementById('navNombremunicipio').style.display= 'none' ; //saco el nombre del municipio
+    
+    document.querySelector('.fin').innerHTML = "¡ Gracias por contestar !"; //coloca ese mensaje ya que termino de contestar 
     return;
   }
 
@@ -87,6 +91,27 @@ var municipio = document.getElementById('navNombremunicipio').innerHTML;
 
 var url = 'respuesta/nuevo';
 var data = {"medicion": elemento.medicion, "respuesta": respuestaSeleccionada,"municipio": municipio};
+
+/*
+data.medicion=elemento.medicion;
+data.respuesta=respuestaSeleccionada;
+data.municipio=municipio;*/
+
+if(data.respuesta){ //si se selecciono respuesta
+
+fetch(url, {
+  method: 'POST',
+  body: JSON.stringify(data), // data can be `string` or {object}!
+  headers:{
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => response.json())
+.catch(error => console.error('Error:', error))
+.then(response => console.log('Success:', response));
+
+}
+
 
 
   i++;

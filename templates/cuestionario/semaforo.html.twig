@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('semaforo') }}
+{% endblock %}
+
+{% block javascripts %}    
+    {{ encore_entry_script_tags('semaforo') }}
+{% endblock %}
+
+{% block body %} 
+   <div class="container">
+        <div class="semaforo"> {# para prender la luz toma lo que dice despues de luces-circulo, si no hay nada queda apagada la luz #}
+            <span class="luces-circulo" color = "red"></span>
+            <span class="luces-circulo" color="yellow"></span>
+            <span class="luces-circulo" color="green"></span>
+        </div>
+        <div class="stick"></div> {# es el palo del semaforo #}
+        <div class="floor"></div> {# es el piso del semaforo #}
+    </div>
+{% endblock %}
