@@ -1,8 +1,10 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+
+.txtsem{
+    float:right;
+    content: "s sdfsdfsd sdfsd sf sd ";
+  clear: both;
+  display: table;
+  }
 body{
     width: 100%;
     min-height: 100vh;
@@ -10,10 +12,7 @@ body{
     place-items: center;
     background-color: #2aa5a5;
 }
-.container{
-    display: grid;
-    place-items: center;
-}
+
 .semaforo{
     width: 100px;
     height: 200px;
@@ -63,3 +62,4 @@ body{
     background-color: #2ecc71;
     box-shadow: 0 0 10px 1px #2ecc71;
 }
+

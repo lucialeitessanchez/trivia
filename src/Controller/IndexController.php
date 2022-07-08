@@ -6,11 +6,14 @@ use App\Entity\Pregunta;
 use App\Entity\Respuesta;
 use App\Form\RespuestaType;
 use Doctrine\ORM\EntityManagerInterface;
+use stdClass;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\PreguntaRepository;
+use App\Repository\RespuestaRepository;
 
 
 #[Route('/')]
@@ -58,7 +61,16 @@ class IndexController extends AbstractController
     #[Route('/semaforo', name: 'app_semaforo', methods: ['GET'])]
     public function semaforo(EntityManagerInterface $entityManager): Response
     {
-        return $this->render('cuestionario/semaforo.html.twig', [
-        ]);
+      //  $tupla= new stdClass();
+      $em = $this->getDoctrine()->getManager();
+
+      //municipio=$request->get('InputMunicipio');
+        $preguntas=$em->getRepository(Pregunta::class);
+        //$preguntas = $entityManager->getRepository(Pregunta::class);
+        $respuestas = $em->getRepository(Respuesta::class)->findAll();
+       // $ids=$respuestas->getIdpregunta();
+        $r=$preguntas->find(2);
+        
+        return $this->render('cuestionario/semaforo.html.twig', array('obj' => $r));
     }
 }

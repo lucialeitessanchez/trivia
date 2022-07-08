@@ -12,4 +12,4 @@ const mostrarLuz = () =>{
     const luzActual = $lucesDelCirculo[contadorDeLuz];
     luzActual.classList.add(luzActual.getAttribute('color'))
 }
-setInterval(mostrarLuz,2000)
+setInterval(mostrarLuz,20000)
