@@ -114,50 +114,37 @@ class __TwigTemplate_7ceb3b1c071be62617f2788b5749c4f0b055c78b2b60864588eda4c7514
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         echo " 
-";
+ <h2>   ";
         // line 12
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["obj"]) || array_key_exists("obj", $context) ? $context["obj"] : (function () { throw new RuntimeError('Variable "obj" does not exist.', 12, $this->source); })()), "parametroMedicion", [], "any", false, false, false, 12), "html", null, true);
-        echo "
-   <div class=\"container\">
+        echo " </h2>
+      <table>
+      
+      <td>
+       <div class=\"container\">  
         <div class=\"semaforo\"> ";
-        // line 15
-        echo "
-            <span class=\"luces-circulo\" color = \"red\"> ";
-        // line 16
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["obj"]) || array_key_exists("obj", $context) ? $context["obj"] : (function () { throw new RuntimeError('Variable "obj" does not exist.', 16, $this->source); })()), "rojo", [], "any", false, false, false, 16), "html", null, true);
-        echo "</span> 
-            <span class=\"luces-circulo\" color=\"yellow\"></span> 
-            <span class=\"luces-circulo\" color=\"green\"></span>
+        // line 18
+        echo "            <span class=\"luces-circulo\" color = \"red\"></span>
+             <span class=\"luces-circulo\" color=\"yellow\"></span>
+             <span class=\"luces-circulo\" color=\"green\"></span>   
         </div>
-     
-
-    </div>
+         </div></td> 
+        <td> ";
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["obj"]) || array_key_exists("obj", $context) ? $context["obj"] : (function () { throw new RuntimeError('Variable "obj" does not exist.', 23, $this->source); })()), "rojo", [], "any", false, false, false, 23), "html", null, true);
+        echo " 
+        <br><br>";
+        // line 24
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["obj"]) || array_key_exists("obj", $context) ? $context["obj"] : (function () { throw new RuntimeError('Variable "obj" does not exist.', 24, $this->source); })()), "amarillo", [], "any", false, false, false, 24), "html", null, true);
+        echo " 
+         <br><br>";
+        // line 25
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["obj"]) || array_key_exists("obj", $context) ? $context["obj"] : (function () { throw new RuntimeError('Variable "obj" does not exist.', 25, $this->source); })()), "verde", [], "any", false, false, false, 25), "html", null, true);
+        echo "  
+</td> 
+    </table>
 
       
-            <div class=\"container\">
-        <div class=\"semaforo\"> ";
-        // line 27
-        echo "<table>
-    <td><span class=\"luces-circulo\" color = \"red\"></span></td>
-    <td> ";
-        // line 29
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["obj"]) || array_key_exists("obj", $context) ? $context["obj"] : (function () { throw new RuntimeError('Variable "obj" does not exist.', 29, $this->source); })()), "rojo", [], "any", false, false, false, 29), "html", null, true);
-        echo "</td> 
-        
-           <span class=\"luces-circulo\" color=\"yellow\"></span>
-          <td>";
-        // line 32
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["obj"]) || array_key_exists("obj", $context) ? $context["obj"] : (function () { throw new RuntimeError('Variable "obj" does not exist.', 32, $this->source); })()), "amarillo", [], "any", false, false, false, 32), "html", null, true);
-        echo "
-         <span class=\"luces-circulo\" color=\"green\"></span>
-            
-        </div>
-</table>
-
-    </div>   
- 
-        
-
     
 ";
         
@@ -180,7 +167,7 @@ class __TwigTemplate_7ceb3b1c071be62617f2788b5749c4f0b055c78b2b60864588eda4c7514
 
     public function getDebugInfo()
     {
-        return array (  150 => 32,  144 => 29,  140 => 27,  127 => 16,  124 => 15,  119 => 12,  107 => 11,  95 => 8,  83 => 7,  70 => 4,  60 => 3,  37 => 1,);
+        return array (  142 => 25,  138 => 24,  134 => 23,  127 => 18,  119 => 12,  107 => 11,  95 => 8,  83 => 7,  70 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -196,36 +183,24 @@ class __TwigTemplate_7ceb3b1c071be62617f2788b5749c4f0b055c78b2b60864588eda4c7514
 {% endblock %}
         
 {% block body %} 
-{{ obj.parametroMedicion }}
-   <div class=\"container\">
+ <h2>   {{ obj.parametroMedicion }} </h2>
+      <table>
+      
+      <td>
+       <div class=\"container\">  
         <div class=\"semaforo\"> {# para prender la luz toma lo que dice despues de luces-circulo, si no hay nada queda apagada la luz #}
-
-            <span class=\"luces-circulo\" color = \"red\"> {{obj.rojo}}</span> 
-            <span class=\"luces-circulo\" color=\"yellow\"></span> 
-            <span class=\"luces-circulo\" color=\"green\"></span>
+            <span class=\"luces-circulo\" color = \"red\"></span>
+             <span class=\"luces-circulo\" color=\"yellow\"></span>
+             <span class=\"luces-circulo\" color=\"green\"></span>   
         </div>
-     
-
-    </div>
+         </div></td> 
+        <td> {{obj.rojo}} 
+        <br><br>{{ obj.amarillo }} 
+         <br><br>{{ obj.verde }}  
+</td> 
+    </table>
 
       
-            <div class=\"container\">
-        <div class=\"semaforo\"> {# para prender la luz toma lo que dice despues de luces-circulo, si no hay nada queda apagada la luz #}
-<table>
-    <td><span class=\"luces-circulo\" color = \"red\"></span></td>
-    <td> {{obj.rojo}}</td> 
-        
-           <span class=\"luces-circulo\" color=\"yellow\"></span>
-          <td>{{obj.amarillo}}
-         <span class=\"luces-circulo\" color=\"green\"></span>
-            
-        </div>
-</table>
-
-    </div>   
- 
-        
-
     
 {% endblock %}", "cuestionario/semaforo.html.twig", "/home/lucia/public_html/trivia/templates/cuestionario/semaforo.html.twig");
     }
